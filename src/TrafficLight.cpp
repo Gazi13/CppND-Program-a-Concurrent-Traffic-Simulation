@@ -50,7 +50,7 @@ void TrafficLight::waitForGreen()
         // Addition of an if statement here could improve performance in a concurrent simulation.
         // For instance, one could image 'yellow' being added to the phases. And just as the while loop is entered
         // we go from red to yellow to green. Instead of having to return to the while, we return immediately.
-        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
         if(_messages.receive() == TrafficLightPhase::green){
             return;
         }
